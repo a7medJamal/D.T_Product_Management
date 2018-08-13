@@ -39,40 +39,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 35);
+            this.label1.Location = new System.Drawing.Point(55, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 24);
+            this.label1.Size = new System.Drawing.Size(136, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المستخدم";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 89);
+            this.label2.Location = new System.Drawing.Point(55, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 24);
+            this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "كلمه المرور";
             // 
             // txt_PWD
             // 
-            this.txt_PWD.Location = new System.Drawing.Point(232, 89);
+            this.txt_PWD.Location = new System.Drawing.Point(211, 82);
             this.txt_PWD.Name = "txt_PWD";
-            this.txt_PWD.Size = new System.Drawing.Size(225, 32);
+            this.txt_PWD.PasswordChar = '*';
+            this.txt_PWD.Size = new System.Drawing.Size(205, 30);
             this.txt_PWD.TabIndex = 2;
             // 
             // txt_User
             // 
-            this.txt_User.Location = new System.Drawing.Point(232, 32);
+            this.txt_User.Location = new System.Drawing.Point(211, 29);
             this.txt_User.Name = "txt_User";
-            this.txt_User.Size = new System.Drawing.Size(225, 32);
+            this.txt_User.Size = new System.Drawing.Size(205, 30);
             this.txt_User.TabIndex = 3;
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(289, 153);
+            this.btn_Cancel.Location = new System.Drawing.Point(263, 140);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(106, 37);
+            this.btn_Cancel.Size = new System.Drawing.Size(96, 34);
             this.btn_Cancel.TabIndex = 4;
             this.btn_Cancel.Text = "الغاء";
             this.btn_Cancel.UseVisualStyleBackColor = true;
@@ -80,25 +81,26 @@
             // 
             // btn_Login
             // 
-            this.btn_Login.Location = new System.Drawing.Point(143, 153);
+            this.btn_Login.Location = new System.Drawing.Point(130, 140);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(106, 37);
+            this.btn_Login.Size = new System.Drawing.Size(96, 34);
             this.btn_Login.TabIndex = 5;
             this.btn_Login.Text = "دخول";
             this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 237);
+            this.ClientSize = new System.Drawing.Size(655, 217);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.txt_User);
             this.Controls.Add(this.txt_PWD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.Font = new System.Drawing.Font("Tahoma", 11F);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

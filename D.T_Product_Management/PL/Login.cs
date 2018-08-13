@@ -12,6 +12,7 @@ namespace D.T_Product_Management.PL
 {
     public partial class Login : Form
     {
+        BL.CLS_Login CLog = new BL.CLS_Login();
         public Login()
         {
             InitializeComponent();
@@ -20,6 +21,19 @@ namespace D.T_Product_Management.PL
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            DataTable dt = CLog.LogIN(txt_User.Text, txt_PWD.Text);
+            if(dt.Rows.Count>0)
+            {
+                MessageBox.Show("login sucessufly");
+            }
+            else
+            {
+                MessageBox.Show("login Faild");
+            }
         }
     }
 }
