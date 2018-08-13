@@ -16,7 +16,7 @@ namespace D.T_Product_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new PL.Login());
         }
     }
 }
