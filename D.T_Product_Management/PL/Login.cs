@@ -35,5 +35,10 @@ namespace D.T_Product_Management.PL
                 MessageBox.Show("login Faild");
             }
         }
+
+        private void btn_Login_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
