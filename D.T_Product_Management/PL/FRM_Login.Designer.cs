@@ -1,6 +1,6 @@
 ﻿namespace D.T_Product_Management.PL
 {
-    partial class Login
+    partial class FRM_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@
             this.monoFlat_ThemeContainer1.Sizable = false;
             this.monoFlat_ThemeContainer1.Size = new System.Drawing.Size(735, 230);
             this.monoFlat_ThemeContainer1.SmartBounds = true;
-            this.monoFlat_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.monoFlat_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.monoFlat_ThemeContainer1.TabIndex = 0;
             this.monoFlat_ThemeContainer1.Text = "تسجيل الدخول";
             // 
@@ -140,7 +140,7 @@
             this.Name = "Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "تسجيل الدخول";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.monoFlat_ThemeContainer1.ResumeLayout(false);
