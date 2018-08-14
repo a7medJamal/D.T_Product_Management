@@ -13,6 +13,7 @@ namespace D.T_Product_Management.PL
     public partial class FRM_Main : Form
     {
         #region TO control from FRM LOGIN
+        // this code to initialize FRM controls to Another FRM login
         private static FRM_Main frm;
         static void frm_formClosed (object sender,FormClosedEventArgs e)
         {
@@ -56,6 +57,32 @@ namespace D.T_Product_Management.PL
         private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void تصغيرالبرنامجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this code to make window Minimized
+            this.WindowState = FormWindowState.Minimized;
+
+
+        }
+
+        private void تصغيرالبرنامجToolStripMenuItem1_Click(object sender, EventArgs e)
+        {   
+            //this code to make window Normal
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void تكبيرالبرنامجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this code to make window Maximized
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void اضافهمنتججديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ADD_PRODUCT frmadd = new FRM_ADD_PRODUCT();
+            frmadd.Show();
         }
     }
 }
