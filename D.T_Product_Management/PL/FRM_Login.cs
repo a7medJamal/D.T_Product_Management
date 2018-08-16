@@ -42,9 +42,6 @@ namespace D.T_Product_Management.PL
             }
         }
 
-        private void btn_Login_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

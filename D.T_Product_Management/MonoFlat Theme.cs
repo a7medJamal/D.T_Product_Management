@@ -1831,6 +1831,8 @@ namespace MonoFlat
             }
         }
 
+        public int SelectionStart { get; internal set; }
+
         #endregion
         #region  EventArgs
 

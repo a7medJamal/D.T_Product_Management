@@ -86,7 +86,7 @@
             this.txt_PWD.Name = "txt_PWD";
             this.txt_PWD.ReadOnly = false;
             this.txt_PWD.Size = new System.Drawing.Size(271, 46);
-            this.txt_PWD.TabIndex = 14;
+            this.txt_PWD.TabIndex = 1;
             this.txt_PWD.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_PWD.UseSystemPasswordChar = true;
             // 
@@ -102,7 +102,7 @@
             this.txt_User.Name = "txt_User";
             this.txt_User.ReadOnly = false;
             this.txt_User.Size = new System.Drawing.Size(271, 46);
-            this.txt_User.TabIndex = 1;
+            this.txt_User.TabIndex = 0;
             this.txt_User.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_User.UseSystemPasswordChar = false;
             // 
@@ -115,7 +115,7 @@
             this.btn_Login.Location = new System.Drawing.Point(420, 181);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(130, 37);
-            this.btn_Login.TabIndex = 13;
+            this.btn_Login.TabIndex = 2;
             this.btn_Login.Text = "دخول";
             this.btn_Login.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -129,7 +129,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(268, 181);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(130, 37);
-            this.btn_Cancel.TabIndex = 12;
+            this.btn_Cancel.TabIndex = 3;
             this.btn_Cancel.Text = "الغاء";
             this.btn_Cancel.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);

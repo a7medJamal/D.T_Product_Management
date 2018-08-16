@@ -100,10 +100,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(26, 26);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 26;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1375, 389);
             this.dataGridView1.TabIndex = 5;
             // 
@@ -152,7 +155,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(514, 185);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(146, 41);
-            this.btn_Cancel.TabIndex = 13;
+            this.btn_Cancel.TabIndex = 6;
             this.btn_Cancel.Text = "الغاء";
             this.btn_Cancel.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click_1);
@@ -166,7 +169,7 @@
             this.btn_ADD.Location = new System.Drawing.Point(791, 185);
             this.btn_ADD.Name = "btn_ADD";
             this.btn_ADD.Size = new System.Drawing.Size(146, 41);
-            this.btn_ADD.TabIndex = 3;
+            this.btn_ADD.TabIndex = 5;
             this.btn_ADD.Text = "اضافه";
             this.btn_ADD.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_ADD.Click += new System.EventHandler(this.btn_ADD_Click);
@@ -279,7 +282,7 @@
             this.txt_Description.Name = "txt_Description";
             this.txt_Description.ReadOnly = false;
             this.txt_Description.Size = new System.Drawing.Size(245, 85);
-            this.txt_Description.TabIndex = 3;
+            this.txt_Description.TabIndex = 1;
             this.txt_Description.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_Description.UseSystemPasswordChar = false;
             // 
@@ -311,7 +314,7 @@
             this.txt_PRICE.Name = "txt_PRICE";
             this.txt_PRICE.ReadOnly = false;
             this.txt_PRICE.Size = new System.Drawing.Size(182, 46);
-            this.txt_PRICE.TabIndex = 1;
+            this.txt_PRICE.TabIndex = 3;
             this.txt_PRICE.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_PRICE.UseSystemPasswordChar = false;
             // 
@@ -330,6 +333,7 @@
             this.txt_ID.TabIndex = 0;
             this.txt_ID.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_ID.UseSystemPasswordChar = false;
+            this.txt_ID.Validated += new System.EventHandler(this.txt_ID_Validated);
             // 
             // FRM_ADD_PRODUCT
             // 

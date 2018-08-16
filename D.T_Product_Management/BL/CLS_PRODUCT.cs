@@ -39,8 +39,41 @@ namespace D.T_Product_Management.BL
             sqlparam[5].Value = IMG;
             DAL.ExecuteCommand("SP_ADD_PRODUCT", sqlparam);
             DAL.close();
+        }
 
+        //to check if id product found 2 once or one once
+        public DataTable VerifyProductID(string ID)
+        {
+            DAL.DataAcessLayer DLL = new DAL.DataAcessLayer();
+            DLL.open();
+            SqlParameter[] sqlparam = new SqlParameter[1];
+            sqlparam[0] = new SqlParameter("@ID",SqlDbType.VarChar,50);
+            sqlparam[0].Value = ID;
+            DataTable dt = new DataTable();
+            dt = DLL.SelectData("SP_VerifyProductID", sqlparam);
+            DLL.close();
+            return dt;
+        }
 
+            // this to initialize data to datat grid view
+        public DataTable GET_ALL_PRODUCTS ()
+        {
+            DAL.DataAcessLayer DLL = new DAL.DataAcessLayer();
+            DataTable dt = new DataTable();
+            dt = DLL.SelectData("SP_GET_ALL_PRODUCT", null);
+            DLL.close();
+            return dt;
+        }
+
+        public DataTable SEARCH_PRODUCT(string id)
+        {
+            DAL.DataAcessLayer da = new DAL.DataAcessLayer();
+            SqlParameter[] sqlparam = new SqlParameter[1];
+            sqlparam[0] = new SqlParameter("@ID", SqlDbType.VarChar, 50);
+            sqlparam[0].Value = id;
+            DataTable dt = new DataTable();
+            dt = da.SelectData("SP_SEARCH_PRODUCT",sqlparam);
+            return dt;
         }
     }
 }

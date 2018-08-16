@@ -16,9 +16,14 @@ namespace D.T_Product_Management.PL
         public FRM_ADD_PRODUCT()
         {
             InitializeComponent();
+
             CMD_CATEGERORIES.DataSource = PL.GET_ALL_CATEGORIES();
             CMD_CATEGERORIES.ValueMember = "ID_CAT";
             CMD_CATEGERORIES.DisplayMember = "DESCRIPTION_CAT";
+
+            this.dataGridView1.DataSource = PL.GET_ALL_PRODUCTS();
+
+
         }
 
 
@@ -34,15 +39,24 @@ namespace D.T_Product_Management.PL
 
         private void btn_ADD_Click(object sender, EventArgs e)
         {
-            //this to convert image to byte data 01010101010101
-            MemoryStream ms = new MemoryStream();
-            PICBOX.Image.Save(ms, PICBOX.Image.RawFormat);
-            byte[] byteImage = ms.ToArray();
-            PL.ADD_PRODUCT(Convert.ToInt32(CMD_CATEGERORIES.SelectedValue), txt_ID.Text, Convert.ToInt32(txt_QUT.Text), txt_Description.Text, Convert.ToInt32(txt_PRICE.Text), byteImage);
+            try
+            {
+                //this to convert image to byte data 01010101010101
+                MemoryStream ms = new MemoryStream();
+                PICBOX.Image.Save(ms, PICBOX.Image.RawFormat);
+                byte[] byteImage = ms.ToArray();
+                PL.ADD_PRODUCT(Convert.ToInt32(CMD_CATEGERORIES.SelectedValue), txt_ID.Text, Convert.ToInt32(txt_QUT.Text), txt_Description.Text, Convert.ToInt32(txt_PRICE.Text), byteImage);
 
-            MessageBox.Show("تمت الاضافه بنجاح", "عمليه لااضافه", MessageBoxButtons.OK);
+                MessageBox.Show("تمت الاضافه بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("يرجى الادخال بطريقه صحيحه", "عمليه الاضافه", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+            }
         }
 
+        //this code to select pic from computer
         private void btn_SelectPic_Click_1(object sender, EventArgs e)
         {
             //this to inizialize image 
@@ -54,6 +68,23 @@ namespace D.T_Product_Management.PL
             }
 
 
+        }
+
+        // this code to Validated data from database
+        private void txt_ID_Validated(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = PL.VerifyProductID(txt_ID.Text);
+            if(dt.Rows.Count>0)
+            {
+                MessageBox.Show("هذا المنتج موجود مسبقا", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                txt_ID.Focus();
+                
+                // txt_ID.SelectionStart = 0;
+              //  txt_ID.SelectLenth = txt_ID.textLenth;
+
+            }
         }
     }
 }

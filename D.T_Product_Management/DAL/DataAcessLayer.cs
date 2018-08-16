@@ -15,7 +15,7 @@ namespace D.T_Product_Management.DAL
         //*2* initialize constractour to this class
         public DataAcessLayer()
         {
-            sqlconnection = new SqlConnection(@"Data Source=LAPTOP-T23O7L29;Initial Catalog=D.T_Product_Management_DB;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            sqlconnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=D.T_Product_Management_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         //*3* initialize to open connection string
