@@ -65,6 +65,7 @@ namespace D.T_Product_Management.BL
             return dt;
         }
 
+        //TO SEARCH from tbl product
         public DataTable SEARCH_PRODUCT(string id)
         {
             DAL.DataAcessLayer da = new DAL.DataAcessLayer();
@@ -75,5 +76,53 @@ namespace D.T_Product_Management.BL
             dt = da.SelectData("SP_SEARCH_PRODUCT",sqlparam);
             return dt;
         }
+
+        //THIS code for delete any item in product
+        public void DELETE_PRODUCT(string ID)
+        {
+            DAL.DataAcessLayer dl = new DAL.DataAcessLayer();
+            dl.open();
+            SqlParameter[] sqlparam = new SqlParameter[1];
+            sqlparam[0] = new SqlParameter("@ID", SqlDbType.VarChar, 50);
+            sqlparam[0].Value = ID;
+            dl.ExecuteCommand("SP_DELETE_PRODUCT", sqlparam);
+            dl.close();
+        }
+
+        //to get image
+        public DataTable Select_Image(string id)
+        {
+            DAL.DataAcessLayer dl = new DAL.DataAcessLayer();
+            SqlParameter[] sqlparam = new SqlParameter[1];
+            sqlparam[0] = new SqlParameter("@ID", SqlDbType.VarChar, 50);
+            sqlparam[0].Value = id;
+            DataTable dt = new DataTable();
+            dt = dl.SelectData("SP_SELECT_IMAGE_PRODUCT", sqlparam);
+            dl.close();
+            return dt;
+        }
+
+        // to inisialize to UPDATE product data
+        public void UPDATE_PRODUCT(int ID_CAT, string ID_PRODUCT, int QTE, string LABEL_Product, int PRICE, byte[] IMG)
+        {
+            DAL.DataAcessLayer DAL = new DAL.DataAcessLayer();
+            DAL.open();
+            SqlParameter[] sqlparam = new SqlParameter[6];
+            sqlparam[0] = new SqlParameter("@ID_CAT", SqlDbType.Int);
+            sqlparam[0].Value = ID_CAT;
+            sqlparam[1] = new SqlParameter("@ID_PRODUCT", SqlDbType.VarChar, 30);
+            sqlparam[1].Value = ID_PRODUCT;
+            sqlparam[2] = new SqlParameter("@QTE", SqlDbType.Int);
+            sqlparam[2].Value = QTE;
+            sqlparam[3] = new SqlParameter("@LABEL", SqlDbType.VarChar, 30);
+            sqlparam[3].Value = LABEL_Product;
+            sqlparam[4] = new SqlParameter("@PRICE", SqlDbType.VarChar, 50);
+            sqlparam[4].Value = PRICE;
+            sqlparam[5] = new SqlParameter("@IMG", SqlDbType.Image);
+            sqlparam[5].Value = IMG;
+            DAL.ExecuteCommand("SP_UPDATE_PRODUCT", sqlparam);
+            DAL.close();
+        }
+
     }
 }

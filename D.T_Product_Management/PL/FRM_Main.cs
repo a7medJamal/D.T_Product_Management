@@ -26,6 +26,7 @@ namespace D.T_Product_Management.PL
             {
                 if(frm==null)
                 {
+                    frm = new FRM_Main();
                     frm.FormClosed += new FormClosedEventHandler(frm_formClosed);
                 }
                 return frm;

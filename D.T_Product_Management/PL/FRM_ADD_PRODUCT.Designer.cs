@@ -33,7 +33,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CMD_CATEGERORIES = new CS_ClassLibraryTester.SLCComboBox();
+            this.CMD_CATEGERORIES = new System.Windows.Forms.ComboBox();
             this.btn_Cancel = new MonoFlat.MonoFlat_Button();
             this.btn_ADD = new MonoFlat.MonoFlat_Button();
             this.btn_SelectPic = new MonoFlat.MonoFlat_Button();
@@ -138,13 +138,12 @@
             // 
             // CMD_CATEGERORIES
             // 
-            this.CMD_CATEGERORIES.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CMD_CATEGERORIES.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMD_CATEGERORIES.FormattingEnabled = true;
-            this.CMD_CATEGERORIES.Location = new System.Drawing.Point(1262, 57);
+            this.CMD_CATEGERORIES.Location = new System.Drawing.Point(1272, 75);
             this.CMD_CATEGERORIES.Name = "CMD_CATEGERORIES";
-            this.CMD_CATEGERORIES.Size = new System.Drawing.Size(182, 28);
-            this.CMD_CATEGERORIES.TabIndex = 6;
+            this.CMD_CATEGERORIES.Size = new System.Drawing.Size(172, 28);
+            this.CMD_CATEGERORIES.TabIndex = 12;
             // 
             // btn_Cancel
             // 
@@ -358,24 +357,24 @@
 
         #endregion
         private MonoFlat.MonoFlat_ThemeContainer monoFlat_ThemeContainer1;
-        private MonoFlat.MonoFlat_Button btn_ADD;
         private System.Windows.Forms.GroupBox groupBox1;
         private MonoFlat.MonoFlat_Button btn_SelectPic;
         private MonoFlat.MonoFlat_Label monoFlat_Label6;
-        private System.Windows.Forms.PictureBox PICBOX;
         private MonoFlat.MonoFlat_Label monoFlat_Label5;
         private MonoFlat.MonoFlat_Label monoFlat_Label4;
         private MonoFlat.MonoFlat_Label monoFlat_Label3;
         private MonoFlat.MonoFlat_Label monoFlat_Label2;
         private MonoFlat.MonoFlat_Label monoFlat_Label1;
-        private MonoFlat.MonoFlat_TextBox txt_Description;
-        private MonoFlat.MonoFlat_TextBox txt_QUT;
-        private MonoFlat.MonoFlat_TextBox txt_PRICE;
-        private MonoFlat.MonoFlat_TextBox txt_ID;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MonoFlat.MonoFlat_Button btn_Cancel;
-        private CS_ClassLibraryTester.SLCComboBox CMD_CATEGERORIES;
         private MonoFlat.MonoFlat_ControlBox monoFlat_ControlBox1;
+        public MonoFlat.MonoFlat_Button btn_ADD;
+        public MonoFlat.MonoFlat_TextBox txt_Description;
+        public MonoFlat.MonoFlat_TextBox txt_QUT;
+        public MonoFlat.MonoFlat_TextBox txt_PRICE;
+        public MonoFlat.MonoFlat_TextBox txt_ID;
+        public System.Windows.Forms.ComboBox CMD_CATEGERORIES;
+        public System.Windows.Forms.PictureBox PICBOX;
     }
 }

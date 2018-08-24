@@ -13,6 +13,10 @@ namespace D.T_Product_Management.PL
     public partial class FRM_ADD_PRODUCT : Form
     {
         BL.CLS_PRODUCT PL = new BL.CLS_PRODUCT();
+
+        //this to make text validation in id product False in form edit
+        public string FRMstate = "add";
+
         public FRM_ADD_PRODUCT()
         {
             InitializeComponent();
@@ -41,15 +45,34 @@ namespace D.T_Product_Management.PL
         {
             try
             {
-                //this to convert image to byte data 01010101010101
-                MemoryStream ms = new MemoryStream();
-                PICBOX.Image.Save(ms, PICBOX.Image.RawFormat);
-                byte[] byteImage = ms.ToArray();
-                PL.ADD_PRODUCT(Convert.ToInt32(CMD_CATEGERORIES.SelectedValue), txt_ID.Text, Convert.ToInt32(txt_QUT.Text), txt_Description.Text, Convert.ToInt32(txt_PRICE.Text), byteImage);
+               if(FRMstate=="add")
+                {
+                    //this to convert image to byte data 01010101010101
+                    MemoryStream ms = new MemoryStream();
+                    PICBOX.Image.Save(ms, PICBOX.Image.RawFormat);
+                    byte[] byteImage = ms.ToArray();
+                    PL.ADD_PRODUCT(Convert.ToInt32(CMD_CATEGERORIES.SelectedValue), txt_ID.Text, Convert.ToInt32(txt_QUT.Text), txt_Description.Text, Convert.ToInt32(txt_PRICE.Text), byteImage);
 
-                MessageBox.Show("تمت الاضافه بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("تمت الاضافه بنجاح", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.dataGridView1.DataSource = PL.GET_ALL_PRODUCTS();
+
+                }
+                else
+                {
+                    MemoryStream ms = new MemoryStream();
+                    PICBOX.Image.Save(ms, PICBOX.Image.RawFormat);
+                    byte[] byteImage = ms.ToArray();
+                    PL.UPDATE_PRODUCT(Convert.ToInt32(CMD_CATEGERORIES.SelectedValue), txt_ID.Text, Convert.ToInt32(txt_QUT.Text), txt_Description.Text, Convert.ToInt32(txt_PRICE.Text), byteImage);
+
+                    MessageBox.Show("تمت التحديث بنجاح", "عمليه التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.dataGridView1.DataSource = PL.GET_ALL_PRODUCTS();
+                    FRM_Products frm = new FRM_Products();
+                    this.Close();
+                }
+                // to updae data in data grid view
+                FRM_Products.getMainForm.DGV_Data.DataSource = PL.GET_ALL_PRODUCTS();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("يرجى الادخال بطريقه صحيحه", "عمليه الاضافه", MessageBoxButtons.OK,MessageBoxIcon.Warning);
 
@@ -73,17 +96,21 @@ namespace D.T_Product_Management.PL
         // this code to Validated data from database
         private void txt_ID_Validated(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = PL.VerifyProductID(txt_ID.Text);
-            if(dt.Rows.Count>0)
+            if(FRMstate=="add")
             {
-                MessageBox.Show("هذا المنتج موجود مسبقا", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DataTable dt = new DataTable();
+                dt = PL.VerifyProductID(txt_ID.Text);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("هذا المنتج موجود مسبقا", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                txt_ID.Focus();
-                
-                // txt_ID.SelectionStart = 0;
-              //  txt_ID.SelectLenth = txt_ID.textLenth;
+                    txt_ID.Focus();
 
+                    // txt_ID.SelectionStart = 0;
+                    //  txt_ID.SelectLenth = txt_ID.textLenth;
+
+
+                }
             }
         }
     }

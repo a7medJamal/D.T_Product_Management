@@ -41,7 +41,6 @@
             this.btn_Image = new MonoFlat.MonoFlat_Button();
             this.btn_Edit = new MonoFlat.MonoFlat_Button();
             this.btn_ADD = new MonoFlat.MonoFlat_Button();
-            this.btn_Search = new MonoFlat.MonoFlat_Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Data)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -51,7 +50,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label1.Location = new System.Drawing.Point(1184, 56);
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(988, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 23);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // txt_Search
             // 
             this.txt_Search.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txt_Search.Location = new System.Drawing.Point(482, 58);
+            this.txt_Search.Location = new System.Drawing.Point(286, 58);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(645, 32);
             this.txt_Search.TabIndex = 0;
@@ -121,6 +121,7 @@
             this.btn_Sava_Excel.TabIndex = 13;
             this.btn_Sava_Excel.Text = "حفظ الاصناف فى ملف اكسل";
             this.btn_Sava_Excel.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Sava_Excel.Click += new System.EventHandler(this.btn_Sava_Excel_Click);
             // 
             // btn_Exite
             // 
@@ -134,6 +135,7 @@
             this.btn_Exite.TabIndex = 12;
             this.btn_Exite.Text = "الخروج";
             this.btn_Exite.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Exite.Click += new System.EventHandler(this.btn_Exite_Click);
             // 
             // btn_Delete
             // 
@@ -147,6 +149,7 @@
             this.btn_Delete.TabIndex = 11;
             this.btn_Delete.Text = "حذف المنتج المحدد";
             this.btn_Delete.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Print
             // 
@@ -160,6 +163,7 @@
             this.btn_Print.TabIndex = 7;
             this.btn_Print.Text = "طباعه كل المنتجات";
             this.btn_Print.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // btn_Print_Selected
             // 
@@ -173,6 +177,7 @@
             this.btn_Print_Selected.TabIndex = 8;
             this.btn_Print_Selected.Text = "طباعه المنتج المحدد";
             this.btn_Print_Selected.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Print_Selected.Click += new System.EventHandler(this.btn_Print_Selected_Click);
             // 
             // btn_Image
             // 
@@ -186,6 +191,7 @@
             this.btn_Image.TabIndex = 9;
             this.btn_Image.Text = "صوره المنتج";
             this.btn_Image.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Image.Click += new System.EventHandler(this.btn_Image_Click);
             // 
             // btn_Edit
             // 
@@ -199,6 +205,7 @@
             this.btn_Edit.TabIndex = 10;
             this.btn_Edit.Text = "تعديل بيانات المنتج";
             this.btn_Edit.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_ADD
             // 
@@ -214,26 +221,12 @@
             this.btn_ADD.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btn_ADD.Click += new System.EventHandler(this.btn_ADD_Click);
             // 
-            // btn_Search
-            // 
-            this.btn_Search.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Search.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btn_Search.Image = null;
-            this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Search.Location = new System.Drawing.Point(240, 54);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(185, 36);
-            this.btn_Search.TabIndex = 6;
-            this.btn_Search.Text = "بحث";
-            this.btn_Search.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
             // FRM_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1447, 748);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.label1);
@@ -256,15 +249,14 @@
         private System.Windows.Forms.TextBox txt_Search;
         private MonoFlat.MonoFlat_Button btn_ADD;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView DGV_Data;
-        private MonoFlat.MonoFlat_Button btn_Search;
         private MonoFlat.MonoFlat_Button btn_Print;
         private MonoFlat.MonoFlat_Button btn_Print_Selected;
         private MonoFlat.MonoFlat_Button btn_Image;
         private MonoFlat.MonoFlat_Button btn_Edit;
-        private MonoFlat.MonoFlat_Button btn_Delete;
         private System.Windows.Forms.GroupBox groupBox2;
         private MonoFlat.MonoFlat_Button btn_Sava_Excel;
         private MonoFlat.MonoFlat_Button btn_Exite;
+        public System.Windows.Forms.DataGridView DGV_Data;
+        public MonoFlat.MonoFlat_Button btn_Delete;
     }
 }
