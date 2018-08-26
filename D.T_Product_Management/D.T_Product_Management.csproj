@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="BL\CLS_CUSTOMERS.cs" />
     <Compile Include="BL\CLS_Login.cs" />
+    <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_PRODUCT.cs" />
     <Compile Include="DAL\DataAcessLayer.cs" />
     <Compile Include="PL\FRM_CATEGORIES.cs">
@@ -81,6 +82,12 @@
     </Compile>
     <Compile Include="PL\FRM_CUSTOMERS.Designer.cs">
       <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_CUSTOMERS_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_CUSTOMERS_LIST.Designer.cs">
+      <DependentUpon>FRM_CUSTOMERS_LIST.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_ORDERS.cs">
       <SubType>Form</SubType>
@@ -118,6 +125,12 @@
     </Compile>
     <Compile Include="PL\FRM_Products.Designer.cs">
       <DependentUpon>FRM_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_PRODUCTS_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_PRODUCTS_LIST.Designer.cs">
+      <DependentUpon>FRM_PRODUCTS_LIST.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,6 +173,9 @@
     <EmbeddedResource Include="PL\FRM_CUSTOMERS.resx">
       <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_CUSTOMERS_LIST.resx">
+      <DependentUpon>FRM_CUSTOMERS_LIST.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_ORDERS.resx">
       <DependentUpon>FRM_ORDERS.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Products.resx">
       <DependentUpon>FRM_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_PRODUCTS_LIST.resx">
+      <DependentUpon>FRM_PRODUCTS_LIST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
