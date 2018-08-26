@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CLS_CUSTOMERS.cs" />
     <Compile Include="BL\CLS_Login.cs" />
     <Compile Include="BL\CLS_PRODUCT.cs" />
     <Compile Include="DAL\DataAcessLayer.cs" />
@@ -74,6 +75,18 @@
     </Compile>
     <Compile Include="PL\FRM_CATEGORIES.Designer.cs">
       <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_CUSTOMERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_CUSTOMERS.Designer.cs">
+      <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_ORDERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ORDERS.Designer.cs">
+      <DependentUpon>FRM_ORDERS.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_PREVIEW.cs">
       <SubType>Form</SubType>
@@ -143,6 +156,12 @@
     </Compile>
     <EmbeddedResource Include="PL\FRM_CATEGORIES.resx">
       <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_CUSTOMERS.resx">
+      <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ORDERS.resx">
+      <DependentUpon>FRM_ORDERS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_PREVIEW.resx">
       <DependentUpon>FRM_PREVIEW.cs</DependentUpon>
