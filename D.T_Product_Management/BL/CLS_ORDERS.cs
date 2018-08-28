@@ -98,5 +98,17 @@ namespace D.T_Product_Management.BL
             return dt;
         }
 
+        public DataTable SEARCH_ORDERS(string Criterion)
+        {
+            DAL.DataAcessLayer dll = new DAL.DataAcessLayer();
+            DataTable dt = new DataTable();
+            SqlParameter[] sqlparam = new SqlParameter[1];
+            sqlparam[0] = new SqlParameter("@Criterion", SqlDbType.VarChar,50);
+            sqlparam[0].Value = Criterion;
+
+            dt = dll.SelectData("SP_SEARCH_ORDERS", sqlparam);
+            dll.close();
+            return dt;
+        }
     }
 }

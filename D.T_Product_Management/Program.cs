@@ -18,7 +18,7 @@ namespace D.T_Product_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PL.FRM_Main());
+            Application.Run(new PL.FRM_ORDERS_LIST());
         }
     }
 }
