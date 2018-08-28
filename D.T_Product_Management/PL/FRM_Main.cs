@@ -41,11 +41,14 @@ namespace D.T_Product_Management.PL
             if (frm == null)
                 frm = this;
             // to close all menu to login first
-            this.العملاءToolStripMenuItem.Enabled = false;
+           this.العملاءToolStripMenuItem.Enabled = false;
             this.المنتوجاتToolStripMenuItem.Enabled = false;
             this.المستخدمونToolStripMenuItem.Enabled = false;
             this.انشاءنسخهاحتياطيهToolStripMenuItem.Enabled = false;
             this.استعادهنسخهاحتياطيهToolStripMenuItem.Enabled = false;
+
+            lblUser.Text = Program.SalesMan;
+            lblClock.Text = DateTime.Now.ToLongDateString();
         }
 
         private void تسجيلالدخولToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,6 +99,47 @@ namespace D.T_Product_Management.PL
         {
             FRM_ORDERS frm = new FRM_ORDERS();
             frm.Show();
+        }
+
+        private void اضافهصنفجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ادارهالاصنافToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_CATEGORIES frm = new FRM_CATEGORIES();
+            frm.ShowDialog();
+
+        }
+
+        private void اضافهعميلجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_CUSTOMERS frm = new FRM_CUSTOMERS();
+            frm.ShowDialog();
+        }
+
+        private void ادارهالعملاءToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_CUSTOMERS_LIST FRM = new FRM_CUSTOMERS_LIST();
+            FRM.ShowDialog();
+        }
+
+        private void ادارهالمبيعاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ORDERS_LIST FRM = new FRM_ORDERS_LIST();
+            FRM.ShowDialog();
+        }
+
+        private void اضافهمستخدمجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ADD_USER FRM = new FRM_ADD_USER();
+            FRM.ShowDialog();
+        }
+
+        private void ادارهالمستخدمينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_USER_LIST FRM = new FRM_USER_LIST();
+            FRM.ShowDialog();
         }
     }
 }

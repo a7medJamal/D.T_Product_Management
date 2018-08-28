@@ -15,7 +15,11 @@ namespace D.T_Product_Management.DAL
         //*2* initialize constractour to this class
         public DataAcessLayer()
         {
-            sqlconnection = new SqlConnection(@"Data Source=LAPTOP-T23O7L29;Initial Catalog=dbProduct;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            // this connection string for me (Database GIT online code)
+           // sqlconnection = new SqlConnection(@"Data Source=LAPTOP-T23O7L29;Initial Catalog=dbProduct;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+            // this short connection string for client server 
+            sqlconnection = new SqlConnection(@"Server=. ;Database=Product_Ma ;Integrated Security=true");
         }
 
         //*3* initialize to open connection string

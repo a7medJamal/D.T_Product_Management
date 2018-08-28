@@ -28,167 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monoFlat_ThemeContainer1 = new MonoFlat.MonoFlat_ThemeContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_PWD = new MonoFlat.MonoFlat_TextBox();
-            this.txt_User = new MonoFlat.MonoFlat_TextBox();
-            this.btn_Login = new MonoFlat.MonoFlat_Button();
-            this.btn_Cancel = new MonoFlat.MonoFlat_Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.txt_PWD = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.monoFlat_ThemeContainer1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_User = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnGO = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // monoFlat_ThemeContainer1
-            // 
-            this.monoFlat_ThemeContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
-            this.monoFlat_ThemeContainer1.Controls.Add(this.pictureBox1);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.txt_PWD);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.txt_User);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.btn_Login);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.btn_Cancel);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.label2);
-            this.monoFlat_ThemeContainer1.Controls.Add(this.label1);
-            this.monoFlat_ThemeContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.monoFlat_ThemeContainer1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.monoFlat_ThemeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.monoFlat_ThemeContainer1.Name = "monoFlat_ThemeContainer1";
-            this.monoFlat_ThemeContainer1.Padding = new System.Windows.Forms.Padding(10, 70, 10, 9);
-            this.monoFlat_ThemeContainer1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.monoFlat_ThemeContainer1.RoundCorners = true;
-            this.monoFlat_ThemeContainer1.Sizable = false;
-            this.monoFlat_ThemeContainer1.Size = new System.Drawing.Size(735, 230);
-            this.monoFlat_ThemeContainer1.SmartBounds = true;
-            this.monoFlat_ThemeContainer1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.monoFlat_ThemeContainer1.TabIndex = 0;
-            this.monoFlat_ThemeContainer1.Text = "تسجيل الدخول";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::D.T_Product_Management.Properties.Resources.login_gov_600x314;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(546, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 131);
+            this.pictureBox1.Size = new System.Drawing.Size(284, 168);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
-            // 
-            // txt_PWD
-            // 
-            this.txt_PWD.BackColor = System.Drawing.Color.Transparent;
-            this.txt_PWD.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txt_PWD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
-            this.txt_PWD.Image = null;
-            this.txt_PWD.Location = new System.Drawing.Point(268, 128);
-            this.txt_PWD.MaxLength = 32767;
-            this.txt_PWD.Multiline = false;
-            this.txt_PWD.Name = "txt_PWD";
-            this.txt_PWD.ReadOnly = false;
-            this.txt_PWD.Size = new System.Drawing.Size(271, 46);
-            this.txt_PWD.TabIndex = 1;
-            this.txt_PWD.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_PWD.UseSystemPasswordChar = true;
-            // 
-            // txt_User
-            // 
-            this.txt_User.BackColor = System.Drawing.Color.Transparent;
-            this.txt_User.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txt_User.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(183)))), ((int)(((byte)(191)))));
-            this.txt_User.Image = null;
-            this.txt_User.Location = new System.Drawing.Point(268, 72);
-            this.txt_User.MaxLength = 32767;
-            this.txt_User.Multiline = false;
-            this.txt_User.Name = "txt_User";
-            this.txt_User.ReadOnly = false;
-            this.txt_User.Size = new System.Drawing.Size(271, 46);
-            this.txt_User.TabIndex = 0;
-            this.txt_User.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_User.UseSystemPasswordChar = false;
-            // 
-            // btn_Login
-            // 
-            this.btn_Login.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Login.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btn_Login.Image = null;
-            this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Login.Location = new System.Drawing.Point(420, 181);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(130, 37);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.Text = "دخول";
-            this.btn_Login.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btn_Cancel.Image = null;
-            this.btn_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Cancel.Location = new System.Drawing.Point(268, 181);
+            this.btn_Cancel.Location = new System.Drawing.Point(390, 203);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(130, 37);
-            this.btn_Cancel.TabIndex = 3;
-            this.btn_Cancel.Text = "الغاء";
-            this.btn_Cancel.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_Cancel.Size = new System.Drawing.Size(101, 39);
+            this.btn_Cancel.TabIndex = 1;
+            this.btn_Cancel.Text = "خروج";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // label2
+            // txt_PWD
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.ForeColor = System.Drawing.Color.Tomato;
-            this.label2.Location = new System.Drawing.Point(575, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 28);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "كلمه المرور";
+            this.txt_PWD.Location = new System.Drawing.Point(70, 106);
+            this.txt_PWD.Margin = new System.Windows.Forms.Padding(5);
+            this.txt_PWD.Name = "txt_PWD";
+            this.txt_PWD.PasswordChar = '*';
+            this.txt_PWD.Size = new System.Drawing.Size(202, 28);
+            this.txt_PWD.TabIndex = 1;
+            this.txt_PWD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_PWD_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label1.ForeColor = System.Drawing.Color.Tomato;
-            this.label1.Location = new System.Drawing.Point(575, 76);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label1.Location = new System.Drawing.Point(356, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "اسم المستخدم";
+            this.label1.Size = new System.Drawing.Size(96, 24);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "كلمه السر";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_User);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txt_PWD);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(26, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(481, 163);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "بيانات الدخول";
+            // 
+            // txt_User
+            // 
+            this.txt_User.Location = new System.Drawing.Point(70, 45);
+            this.txt_User.Margin = new System.Windows.Forms.Padding(5);
+            this.txt_User.Name = "txt_User";
+            this.txt_User.Size = new System.Drawing.Size(202, 28);
+            this.txt_User.TabIndex = 0;
+            this.txt_User.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_User_KeyDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label2.Location = new System.Drawing.Point(309, 49);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 24);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "اسم المستخدم";
+            // 
+            // btnGO
+            // 
+            this.btnGO.Location = new System.Drawing.Point(116, 203);
+            this.btnGO.Name = "btnGO";
+            this.btnGO.Size = new System.Drawing.Size(163, 38);
+            this.btnGO.TabIndex = 17;
+            this.btnGO.Text = "دخول";
+            this.btnGO.UseVisualStyleBackColor = true;
+            this.btnGO.Click += new System.EventHandler(this.btnGO_Click);
             // 
             // FRM_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 230);
-            this.Controls.Add(this.monoFlat_ThemeContainer1);
-            this.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.ClientSize = new System.Drawing.Size(843, 256);
+            this.Controls.Add(this.btnGO);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.pictureBox1);
+            this.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FRM_Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسجيل الدخول";
-            this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            this.monoFlat_ThemeContainer1.ResumeLayout(false);
-            this.monoFlat_ThemeContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MonoFlat.MonoFlat_ThemeContainer monoFlat_ThemeContainer1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private MonoFlat.MonoFlat_Button btn_Cancel;
-        private MonoFlat.MonoFlat_Button btn_Login;
-        private MonoFlat.MonoFlat_TextBox txt_PWD;
-        private MonoFlat.MonoFlat_TextBox txt_User;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.TextBox txt_PWD;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txt_User;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnGO;
     }
 }

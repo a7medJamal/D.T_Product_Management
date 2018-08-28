@@ -16,35 +16,88 @@ namespace D.T_Product_Management.PL
         public FRM_Login()
         {
             InitializeComponent();
+
+            groupBox1.Focus();
+            txt_User.Focus();
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             Close();
+
         }
 
-        private void btn_Login_Click(object sender, EventArgs e)
+        private void txt_User_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txt_PWD.Focus();
+            }
+
+        }
+
+        private void btn_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txt_PWD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnGO.Focus();
+            }
+
+        }
+
+        private void btnGO_Click(object sender, EventArgs e)
         {
             DataTable dt = CLog.LogIN(txt_User.Text, txt_PWD.Text);
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
-                // to make all menu active after login successfully
-                FRM_Main.getMainForm.العملاءToolStripMenuItem.Enabled = true;
-                FRM_Main.getMainForm.المنتوجاتToolStripMenuItem.Enabled = true;
-                FRM_Main.getMainForm.المستخدمونToolStripMenuItem.Enabled = true;
-                FRM_Main.getMainForm.استعادهنسخهاحتياطيهToolStripMenuItem.Enabled = true;
-                FRM_Main.getMainForm.انشاءنسخهاحتياطيهToolStripMenuItem.Enabled = true;
+                if (dt.Rows[0][2].ToString() == "ADMIN")
+                {
+                    // to make all menu active after login successfully
+                    FRM_Main.getMainForm.العملاءToolStripMenuItem.Enabled = true;
+                    FRM_Main.getMainForm.المنتوجاتToolStripMenuItem.Enabled = true;
+                    FRM_Main.getMainForm.المستخدمونToolStripMenuItem.Enabled = true;
+                    FRM_Main.getMainForm.المستخدمونToolStripMenuItem.Visible = true;
 
-                // to get user name
-                Program.SalesMan = dt.Rows[0]["FULLNAME"].ToString();
-                this.Close();
+                    FRM_Main.getMainForm.استعادهنسخهاحتياطيهToolStripMenuItem.Enabled = true;
+                    FRM_Main.getMainForm.انشاءنسخهاحتياطيهToolStripMenuItem.Enabled = true;
+
+                    // to get user name
+                    Program.SalesMan = dt.Rows[0]["FULLNAME"].ToString();
+
+                    //FRM_Main frm = new FRM_Main();
+                    //frm.ShowDialog();
+
+                    this.Close();
+                }
+                else if (dt.Rows[0][2].ToString() == "USER")
+                {
+                    // to make all menu active after login successfully
+                    FRM_Main.getMainForm.العملاءToolStripMenuItem.Enabled = true;
+                    FRM_Main.getMainForm.المنتوجاتToolStripMenuItem.Enabled = true;
+                    FRM_Main.getMainForm.المستخدمونToolStripMenuItem.Visible = false;
+                    FRM_Main.getMainForm.استعادهنسخهاحتياطيهToolStripMenuItem.Enabled = false;
+                    FRM_Main.getMainForm.انشاءنسخهاحتياطيهToolStripMenuItem.Enabled = true;
+
+                    // to get user name
+                    Program.SalesMan = dt.Rows[0]["FULLNAME"].ToString();
+
+
+                    //FRM_Main frm = new FRM_Main();
+                    //frm.ShowDialog();
+                    this.Close();
+
+                }
             }
             else
             {
-                MessageBox.Show("login Faild");
+                MessageBox.Show("ادخل اسم المستخدم أو كلمه المرور غير صحيحه", "تسجيل الدخول", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
 
-       
+        }
     }
 }

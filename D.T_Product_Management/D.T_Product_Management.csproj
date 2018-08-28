@@ -71,11 +71,35 @@
     <Compile Include="BL\CLS_ORDERS.cs" />
     <Compile Include="BL\CLS_PRODUCT.cs" />
     <Compile Include="DAL\DataAcessLayer.cs" />
+    <Compile Include="PL\FRM_ADD_PRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ADD_PRODUCT.Designer.cs">
+      <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_ADD_USER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_ADD_USER.Designer.cs">
+      <DependentUpon>FRM_ADD_USER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_BACKUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_BACKUP.Designer.cs">
+      <DependentUpon>FRM_BACKUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_CATEGORIES.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\FRM_CATEGORIES.Designer.cs">
       <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_CONFIG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_CONFIG.Designer.cs">
+      <DependentUpon>FRM_CONFIG.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_CUSTOMERS.cs">
       <SubType>Form</SubType>
@@ -88,6 +112,12 @@
     </Compile>
     <Compile Include="PL\FRM_CUSTOMERS_LIST.Designer.cs">
       <DependentUpon>FRM_CUSTOMERS_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_ORDERS.cs">
       <SubType>Form</SubType>
@@ -108,18 +138,6 @@
       <DependentUpon>FRM_PREVIEW.cs</DependentUpon>
     </Compile>
     <Compile Include="MonoFlat Theme.cs" />
-    <Compile Include="PL\FRM_ADD_PRODUCT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\FRM_ADD_PRODUCT.Designer.cs">
-      <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\FRM_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PL\FRM_Login.Designer.cs">
-      <DependentUpon>FRM_Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\FRM_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +155,18 @@
     </Compile>
     <Compile Include="PL\FRM_PRODUCTS_LIST.Designer.cs">
       <DependentUpon>FRM_PRODUCTS_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_RESTOREcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_RESTOREcs.Designer.cs">
+      <DependentUpon>FRM_RESTOREcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_USER_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_USER_LIST.Designer.cs">
+      <DependentUpon>FRM_USER_LIST.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,17 +206,29 @@
       <DependentUpon>RPT_SINGLE_CATEGORE.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SlcTheme.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <EmbeddedResource Include="PL\FRM_ADD_PRODUCT.resx">
+      <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_ADD_USER.resx">
+      <DependentUpon>FRM_ADD_USER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_BACKUP.resx">
+      <DependentUpon>FRM_BACKUP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_CATEGORIES.resx">
       <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_CONFIG.resx">
+      <DependentUpon>FRM_CONFIG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_CUSTOMERS.resx">
       <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_CUSTOMERS_LIST.resx">
       <DependentUpon>FRM_CUSTOMERS_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_ORDERS.resx">
       <DependentUpon>FRM_ORDERS.cs</DependentUpon>
@@ -197,12 +239,6 @@
     <EmbeddedResource Include="PL\FRM_PREVIEW.resx">
       <DependentUpon>FRM_PREVIEW.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\FRM_ADD_PRODUCT.resx">
-      <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\FRM_Login.resx">
-      <DependentUpon>FRM_Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Main.resx">
       <DependentUpon>FRM_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_PRODUCTS_LIST.resx">
       <DependentUpon>FRM_PRODUCTS_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_RESTOREcs.resx">
+      <DependentUpon>FRM_RESTOREcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_USER_LIST.resx">
+      <DependentUpon>FRM_USER_LIST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

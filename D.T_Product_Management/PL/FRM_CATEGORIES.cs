@@ -18,8 +18,13 @@ namespace D.T_Product_Management.PL
     // this form and class make single code not connect with data Acess layer
     public partial class FRM_CATEGORIES : Form
     {
-        //this direct connection string
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=LAPTOP-T23O7L29;Initial Catalog=dbProduct;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+        // this connection string for me (Database GIT online code)
+        // sqlconnection = new SqlConnection(@"Data Source=LAPTOP-T23O7L29;Initial Catalog=dbProduct;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+        // this short connection string for client server 
+        SqlConnection sqlcon = new SqlConnection(@"Server=. ;Database=Product_Ma ;Integrated Security=true");
+
         SqlDataAdapter da;
         DataTable dt = new DataTable ();
 
@@ -223,6 +228,11 @@ namespace D.T_Product_Management.PL
 
             myreport.Export();
             MessageBox.Show("تم حفظ الملف بنجاح", "الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void FRM_CATEGORIES_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

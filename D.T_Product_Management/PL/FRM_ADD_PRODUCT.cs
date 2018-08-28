@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+
 namespace D.T_Product_Management.PL
 {
     public partial class FRM_ADD_PRODUCT : Form
@@ -26,26 +27,13 @@ namespace D.T_Product_Management.PL
             CMD_CATEGERORIES.DisplayMember = "DESCRIPTION_CAT";
 
             this.dataGridView1.DataSource = PL.GET_ALL_PRODUCTS();
-
-
-        }
-
-
-        private void monoFlat_ThemeContainer1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Cancel_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btn_ADD_Click(object sender, EventArgs e)
         {
             try
             {
-               if(FRMstate=="add")
+                if (FRMstate == "add")
                 {
                     //this to convert image to byte data 01010101010101
                     MemoryStream ms = new MemoryStream();
@@ -72,15 +60,14 @@ namespace D.T_Product_Management.PL
                 // to updae data in data grid view
                 FRM_Products.getMainForm.DGV_Data.DataSource = PL.GET_ALL_PRODUCTS();
             }
-            catch (Exception )
+            catch (Exception)
             {
-                MessageBox.Show("يرجى الادخال بطريقه صحيحه", "عمليه الاضافه", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("يرجى الادخال بطريقه صحيحه", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
 
-        //this code to select pic from computer
-        private void btn_SelectPic_Click_1(object sender, EventArgs e)
+        private void btn_SelectPic_Click(object sender, EventArgs e)
         {
             //this to inizialize image 
             OpenFileDialog ofd = new OpenFileDialog();
@@ -89,14 +76,11 @@ namespace D.T_Product_Management.PL
             {
                 PICBOX.Image = Image.FromFile(ofd.FileName);
             }
-
-
         }
 
-        // this code to Validated data from database
         private void txt_ID_Validated(object sender, EventArgs e)
         {
-            if(FRMstate=="add")
+            if (FRMstate == "add")
             {
                 DataTable dt = new DataTable();
                 dt = PL.VerifyProductID(txt_ID.Text);
@@ -108,10 +92,13 @@ namespace D.T_Product_Management.PL
 
                     // txt_ID.SelectionStart = 0;
                     //  txt_ID.SelectLenth = txt_ID.textLenth;
-
-
                 }
             }
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

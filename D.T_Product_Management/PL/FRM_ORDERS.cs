@@ -27,10 +27,8 @@ namespace D.T_Product_Management.PL
         {
             if(txtProductPrice.Text !=String.Empty && txtProductQTE.Text !=String.Empty)
             {
-                
                 txtProductQTEPrice.Text =( Convert.ToDouble(txtProductPrice.Text) * Convert.ToInt32(txtProductQTE.Text)).ToString();
             }
-            
         }
 
         void CalculateTotalAmount()

@@ -12,13 +12,15 @@ namespace D.T_Product_Management
         /// The main entry point for the application.
         /// </summary>
         
+            // this for get SalesMan from login form
         public static string SalesMan;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PL.FRM_ORDERS_LIST());
+            Application.Run(new PL.FRM_Main());
         }
     }
 }
