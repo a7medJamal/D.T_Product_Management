@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,6 +53,12 @@
             this.btnSelectCust = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DGVNEWOrders = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.تعديلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.حذفاكلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtProductTotal = new System.Windows.Forms.TextBox();
@@ -80,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CustPicture)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVNEWOrders)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -339,6 +347,7 @@
             // 
             this.DGVNEWOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVNEWOrders.ColumnHeadersVisible = false;
+            this.DGVNEWOrders.ContextMenuStrip = this.contextMenuStrip1;
             this.DGVNEWOrders.Location = new System.Drawing.Point(11, 67);
             this.DGVNEWOrders.MultiSelect = false;
             this.DGVNEWOrders.Name = "DGVNEWOrders";
@@ -347,6 +356,51 @@
             this.DGVNEWOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVNEWOrders.Size = new System.Drawing.Size(1087, 256);
             this.DGVNEWOrders.TabIndex = 114;
+            this.DGVNEWOrders.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DGVNEWOrders_RowsRemoved);
+            this.DGVNEWOrders.DoubleClick += new System.EventHandler(this.DGVNEWOrders_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.تعديلToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.حذفToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.حذفاكلToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(200, 88);
+            // 
+            // تعديلToolStripMenuItem
+            // 
+            this.تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
+            this.تعديلToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.تعديلToolStripMenuItem.Text = "تعديل";
+            this.تعديلToolStripMenuItem.Click += new System.EventHandler(this.تعديلToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(196, 6);
+            // 
+            // حذفToolStripMenuItem
+            // 
+            this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.حذفToolStripMenuItem.Text = "حذف السطر الحالي";
+            this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(196, 6);
+            // 
+            // حذفاكلToolStripMenuItem
+            // 
+            this.حذفاكلToolStripMenuItem.Name = "حذفاكلToolStripMenuItem";
+            this.حذفاكلToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.حذفاكلToolStripMenuItem.Text = "حذف الكل";
+            this.حذفاكلToolStripMenuItem.Click += new System.EventHandler(this.حذفاكلToolStripMenuItem_Click);
             // 
             // label18
             // 
@@ -546,6 +600,7 @@
             this.btnPrintOrder.TabIndex = 6;
             this.btnPrintOrder.Text = "طباعه الفانوره";
             this.btnPrintOrder.UseVisualStyleBackColor = true;
+            this.btnPrintOrder.Click += new System.EventHandler(this.btnPrintOrder_Click);
             // 
             // btnSaveOrder
             // 
@@ -605,6 +660,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVNEWOrders)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -659,5 +715,11 @@
         private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.Button btnProductSearch;
         private System.Windows.Forms.DataGridView DGVNEWOrders;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem تعديلToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem حذفاكلToolStripMenuItem;
     }
 }

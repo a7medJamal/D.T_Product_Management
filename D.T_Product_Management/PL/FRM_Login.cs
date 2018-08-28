@@ -34,6 +34,9 @@ namespace D.T_Product_Management.PL
                 FRM_Main.getMainForm.المستخدمونToolStripMenuItem.Enabled = true;
                 FRM_Main.getMainForm.استعادهنسخهاحتياطيهToolStripMenuItem.Enabled = true;
                 FRM_Main.getMainForm.انشاءنسخهاحتياطيهToolStripMenuItem.Enabled = true;
+
+                // to get user name
+                Program.SalesMan = dt.Rows[0]["FULLNAME"].ToString();
                 this.Close();
             }
             else

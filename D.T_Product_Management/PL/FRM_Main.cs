@@ -91,5 +91,11 @@ namespace D.T_Product_Management.PL
             FRM_Products frm = new FRM_Products();
             frm.ShowDialog();
         }
+
+        private void اضافهبيعجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ORDERS frm = new FRM_ORDERS();
+            frm.Show();
+        }
     }
 }

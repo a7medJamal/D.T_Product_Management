@@ -15,6 +15,7 @@ using System.IO;
  ((المبلغ الاجمالى = المبلغ-(المبلغ *(نسبه الخصم/100 
  */
 #endregion
+
 namespace D.T_Product_Management.PL
 {
     public partial class FRM_ORDERS : Form
@@ -72,7 +73,25 @@ namespace D.T_Product_Management.PL
             txtProductDiscount.Clear();
             txtProductTotal.Clear();
         }
-         void ResizeDG()
+        void ClearPrimaryBoxes()
+        {
+            txtCustID.Clear();
+            txtCustLastName.Clear();
+            txtCustFirstName.Clear();
+            txtCustMail.Clear();
+            txtCustPhone.Clear();
+            txtOrderDescription.Clear();
+
+            ClearBoxes();
+            DGVNEWOrders.DataSource = null;
+            txtOrderSUM.Clear();
+            CustPicture.Image = null;
+
+            btnPrintOrder.Enabled = true;
+            btnNewOrder.Enabled = true;
+            btnSaveOrder.Enabled = false;
+        }
+        void ResizeDG()
         {
             this.DGVNEWOrders.RowHeadersWidth = 85;
             this.DGVNEWOrders.Columns[0].Width = 147;
@@ -94,6 +113,7 @@ namespace D.T_Product_Management.PL
             btnPrintOrder.Enabled = false;
             txtOrderID.Text = order.GET_Last_Orders_ID().Rows[0][0].ToString();
 
+            txtOrderSeller.Text = Program.SalesMan;
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
@@ -106,8 +126,32 @@ namespace D.T_Product_Management.PL
 
         private void btnSaveOrder_Click(object sender, EventArgs e)
         {
-            btnPrintOrder.Enabled = true;
-            btnNewOrder.Enabled = true;
+
+            //check values
+            if(txtOrderID.Text==string.Empty || txtCustID.Text==string.Empty|| DGVNEWOrders.Rows.Count<1 || txtOrderDescription.Text==string.Empty)
+            {
+                MessageBox.Show("ادخل البيانات الناقصه ف الفاتوره", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //ADD ORDER INFORMATION
+            order.ADD_Orders(Convert.ToInt32(txtOrderID.Text), Convert.ToDateTime(datOrderData.Value), Convert.ToInt32(txtCustID.Text), txtOrderDescription.Text, txtOrderSeller.Text);
+
+
+            //ADD ORDER PRODUCTS
+            for (int i = 0; i < DGVNEWOrders.Rows.Count- 1; i++)
+            {
+                order.ADD_Order_Details(DGVNEWOrders.Rows[i].Cells[0].Value.ToString()
+                    , Convert.ToInt32(txtOrderID.Text)
+                    , Convert.ToInt32(DGVNEWOrders.Rows[i].Cells[3].Value)
+                    , DGVNEWOrders.Rows[i].Cells[2].Value.ToString()
+                    , Convert.ToInt32(DGVNEWOrders.Rows[i].Cells[5].Value)
+                    , DGVNEWOrders.Rows[i].Cells[4].Value.ToString()
+                    , DGVNEWOrders.Rows[i].Cells[6].Value.ToString());            
+        }
+            MessageBox.Show("تمت الاضافه بنجاح", "اضافه الفاتوره", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+           // for empty all data to add new data
+            ClearPrimaryBoxes();
 
         }
 
@@ -159,6 +203,8 @@ namespace D.T_Product_Management.PL
 
         private void btnProductSearch_Click(object sender, EventArgs e)
         {
+            ClearBoxes();
+
             PL.FRM_PRODUCTS_LIST frm = new FRM_PRODUCTS_LIST();
             frm.ShowDialog();
             txtProductID.Text = frm.DGVProducts.CurrentRow.Cells[0].Value.ToString();
@@ -241,6 +287,20 @@ namespace D.T_Product_Management.PL
         {
             if(e.KeyCode==Keys.Enter)
             {
+                if (order.VERIFYQTY(txtProductID.Text, Convert.ToInt32(txtProductQTE.Text)).Rows.Count < 1)
+                {
+                    MessageBox.Show("الكميه المدخله لهذا المنتج غير متاحه", "اضافه الاصناف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                // this for check if this product found or not
+                for (int i=0; i<DGVNEWOrders.Rows.Count-1;i++)
+                {
+                    if(DGVNEWOrders.Rows[i].Cells[0].Value.ToString()==txtProductID.Text)
+                    {
+                        MessageBox.Show("تم اضافه هذا الصنف من قبل","اضافه الاصناف",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        return;
+                    }
+                }
                 DataRow r = dt.NewRow();
                 r[0] = txtProductID.Text;
                 r[1] = txtProductName.Text;
@@ -258,6 +318,76 @@ namespace D.T_Product_Management.PL
                 txtOrderSUM.Text=(from DataGridViewRow row in DGVNEWOrders.Rows where row.Cells[6].FormattedValue.ToString() !=String.Empty select Convert.ToDouble(row.Cells[6].FormattedValue)).Sum().ToString();
 
             }
+        }
+
+        private void DGVNEWOrders_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                txtProductID.Text = this.DGVNEWOrders.CurrentRow.Cells[0].Value.ToString();
+                txtProductName.Text = this.DGVNEWOrders.CurrentRow.Cells[1].Value.ToString();
+                txtProductPrice.Text = this.DGVNEWOrders.CurrentRow.Cells[2].Value.ToString();
+                txtProductQTE.Text = this.DGVNEWOrders.CurrentRow.Cells[3].Value.ToString();
+                txtProductQTEPrice.Text = this.DGVNEWOrders.CurrentRow.Cells[4].Value.ToString();
+                txtProductDiscount.Text = this.DGVNEWOrders.CurrentRow.Cells[5].Value.ToString();
+                txtProductTotal.Text = this.DGVNEWOrders.CurrentRow.Cells[6].Value.ToString();
+
+                //THIS FOR REMOVE ROWS AFTER EDIT
+                DGVNEWOrders.Rows.RemoveAt(DGVNEWOrders.CurrentRow.Index);
+
+                txtProductQTE.Focus();
+
+
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void DGVNEWOrders_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            txtOrderSUM.Text = (from DataGridViewRow row in DGVNEWOrders.Rows where row.Cells[6].FormattedValue.ToString() != String.Empty select Convert.ToDouble(row.Cells[6].FormattedValue)).Sum().ToString();
+
+        }
+
+        private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DGVNEWOrders_DoubleClick(sender, e);
+        }
+
+        private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DGVNEWOrders.Rows.RemoveAt(DGVNEWOrders.CurrentRow.Index);
+        }
+
+        private void حذفاكلToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dt.Clear();
+            DGVNEWOrders.Refresh();
+        }
+
+        private void btbDeletSelectRow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrintOrder_Click(object sender, EventArgs e)
+        {
+            //this to make cursor waiting
+            this.Cursor = Cursors.WaitCursor;
+            //get last order
+            int order_id =Convert.ToInt32(order.GET_Last_Orders_ID_FOR_PRINT().Rows[0][0]);
+            // form for crestal report
+            RPT.rpt_Orders report = new RPT.rpt_Orders();
+            RPT.FRM_PRT_PRODUCT frm = new RPT.FRM_PRT_PRODUCT();
+            report.SetDataSource(order.GetOrderDetails(order_id));
+            frm.crystalReportViewer1.ReportSource = report;
+            frm.ShowDialog();
+
+            //this to make cursor Default
+            this.Cursor = Cursors.Default;
+
         }
     }
 }

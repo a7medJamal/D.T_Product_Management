@@ -148,32 +148,32 @@
             // اضافهمنتججديدToolStripMenuItem
             // 
             this.اضافهمنتججديدToolStripMenuItem.Name = "اضافهمنتججديدToolStripMenuItem";
-            this.اضافهمنتججديدToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.اضافهمنتججديدToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.اضافهمنتججديدToolStripMenuItem.Text = "اضافه منتج جديد";
             this.اضافهمنتججديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهمنتججديدToolStripMenuItem_Click);
             // 
             // ادارهالمنتوجاتToolStripMenuItem
             // 
             this.ادارهالمنتوجاتToolStripMenuItem.Name = "ادارهالمنتوجاتToolStripMenuItem";
-            this.ادارهالمنتوجاتToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.ادارهالمنتوجاتToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.ادارهالمنتوجاتToolStripMenuItem.Text = "اداره المنتوجات";
             this.ادارهالمنتوجاتToolStripMenuItem.Click += new System.EventHandler(this.ادارهالمنتوجاتToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(213, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
             // 
             // اضافهصنفجديدToolStripMenuItem
             // 
             this.اضافهصنفجديدToolStripMenuItem.Name = "اضافهصنفجديدToolStripMenuItem";
-            this.اضافهصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.اضافهصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.اضافهصنفجديدToolStripMenuItem.Text = "اضافه صنف جديد";
             // 
             // ادارهالاصنافToolStripMenuItem
             // 
             this.ادارهالاصنافToolStripMenuItem.Name = "ادارهالاصنافToolStripMenuItem";
-            this.ادارهالاصنافToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.ادارهالاصنافToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.ادارهالاصنافToolStripMenuItem.Text = "اداره الاصناف";
             // 
             // العملاءToolStripMenuItem
@@ -191,30 +191,31 @@
             // اضافهعميلجديدToolStripMenuItem
             // 
             this.اضافهعميلجديدToolStripMenuItem.Name = "اضافهعميلجديدToolStripMenuItem";
-            this.اضافهعميلجديدToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.اضافهعميلجديدToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.اضافهعميلجديدToolStripMenuItem.Text = "اضافه عميل جديد";
             // 
             // ادارهالعملاءToolStripMenuItem
             // 
             this.ادارهالعملاءToolStripMenuItem.Name = "ادارهالعملاءToolStripMenuItem";
-            this.ادارهالعملاءToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.ادارهالعملاءToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ادارهالعملاءToolStripMenuItem.Text = "اداره العملاء";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(191, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(213, 6);
             // 
             // اضافهبيعجديدToolStripMenuItem
             // 
             this.اضافهبيعجديدToolStripMenuItem.Name = "اضافهبيعجديدToolStripMenuItem";
-            this.اضافهبيعجديدToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.اضافهبيعجديدToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.اضافهبيعجديدToolStripMenuItem.Text = "اضافه بيع جديد";
+            this.اضافهبيعجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافهبيعجديدToolStripMenuItem_Click);
             // 
             // ادارهالمبيعاتToolStripMenuItem
             // 
             this.ادارهالمبيعاتToolStripMenuItem.Name = "ادارهالمبيعاتToolStripMenuItem";
-            this.ادارهالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
+            this.ادارهالمبيعاتToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ادارهالمبيعاتToolStripMenuItem.Text = "اداره المبيعات";
             // 
             // المستخدمونToolStripMenuItem
