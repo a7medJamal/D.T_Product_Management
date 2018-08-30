@@ -106,9 +106,9 @@
             // 
             // btn_SelectPic
             // 
-            this.btn_SelectPic.Location = new System.Drawing.Point(56, 211);
+            this.btn_SelectPic.Location = new System.Drawing.Point(97, 211);
             this.btn_SelectPic.Name = "btn_SelectPic";
-            this.btn_SelectPic.Size = new System.Drawing.Size(148, 34);
+            this.btn_SelectPic.Size = new System.Drawing.Size(102, 34);
             this.btn_SelectPic.TabIndex = 4;
             this.btn_SelectPic.Text = "........";
             this.btn_SelectPic.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(59, 14);
+            this.label2.Location = new System.Drawing.Point(100, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 23);
             this.label2.TabIndex = 7;
@@ -164,7 +164,8 @@
             this.txt_ID.Location = new System.Drawing.Point(687, 101);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.Size = new System.Drawing.Size(216, 32);
-            this.txt_ID.TabIndex = 6;
+            this.txt_ID.TabIndex = 0;
+            this.txt_ID.TextChanged += new System.EventHandler(this.txt_ID_TextChanged);
             this.txt_ID.Validated += new System.EventHandler(this.txt_ID_Validated);
             // 
             // txt_Description
@@ -174,24 +175,29 @@
             this.txt_Description.Multiline = true;
             this.txt_Description.Name = "txt_Description";
             this.txt_Description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_Description.Size = new System.Drawing.Size(251, 82);
-            this.txt_Description.TabIndex = 5;
+            this.txt_Description.Size = new System.Drawing.Size(251, 94);
+            this.txt_Description.TabIndex = 1;
             // 
             // txt_QUT
             // 
             this.txt_QUT.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txt_QUT.Location = new System.Drawing.Point(342, 43);
+            this.txt_QUT.MaxLength = 7;
             this.txt_QUT.Name = "txt_QUT";
             this.txt_QUT.Size = new System.Drawing.Size(190, 32);
-            this.txt_QUT.TabIndex = 4;
+            this.txt_QUT.TabIndex = 3;
+            this.txt_QUT.TextChanged += new System.EventHandler(this.txt_QUT_TextChanged);
+            this.txt_QUT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_QUT_KeyPress);
             // 
             // txt_PRICE
             // 
             this.txt_PRICE.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txt_PRICE.Location = new System.Drawing.Point(342, 109);
+            this.txt_PRICE.MaxLength = 5;
             this.txt_PRICE.Name = "txt_PRICE";
             this.txt_PRICE.Size = new System.Drawing.Size(190, 32);
-            this.txt_PRICE.TabIndex = 2;
+            this.txt_PRICE.TabIndex = 4;
+            this.txt_PRICE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_PRICE_KeyPress);
             // 
             // label1
             // 
@@ -239,7 +245,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(683, 307);
+            this.btn_Cancel.Location = new System.Drawing.Point(681, 307);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(113, 37);
             this.btn_Cancel.TabIndex = 3;

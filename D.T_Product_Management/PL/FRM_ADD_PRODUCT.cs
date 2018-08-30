@@ -63,8 +63,12 @@ namespace D.T_Product_Management.PL
             catch (Exception)
             {
                 MessageBox.Show("يرجى الادخال بطريقه صحيحه", "عمليه الاضافه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
+            txt_Description.Clear();
+            txt_PRICE.Clear();
+            txt_QUT.Clear();
+            txt_PRICE.Clear();
+            PICBOX.Image = null;
         }
 
         private void btn_SelectPic_Click(object sender, EventArgs e)
@@ -99,6 +103,34 @@ namespace D.T_Product_Management.PL
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_QUT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txt_PRICE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txt_QUT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_ID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

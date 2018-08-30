@@ -387,5 +387,31 @@ namespace D.T_Product_Management.PL
             this.Cursor = Cursors.Default;
 
         }
+
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+            ClearBoxes();
+
+
+            BL.CLS_ORDERS clsPro = new BL.CLS_ORDERS();
+
+
+            DataTable dt = new DataTable();
+            dt = clsPro.SEARCH_BARCODE(txtBarcode.Text);
+            if (dt.Rows.Count > 0)
+            {
+                txtProductID.Text = dt.Rows[0][0].ToString();
+
+                txtProductName.Text = dt.Rows[0][1].ToString();
+
+                txtProductPrice.Text = dt.Rows[0][2].ToString();
+
+                // txt_ID.SelectionStart = 0;
+                //  txt_ID.SelectLenth = txt_ID.textLenth;
+            }
+
+          
+
+        }
     }
 }

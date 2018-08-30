@@ -110,5 +110,19 @@ namespace D.T_Product_Management.BL
             dll.close();
             return dt;
         }
+
+        public DataTable SEARCH_BARCODE(string ID)
+        {
+            DAL.DataAcessLayer DLL = new DAL.DataAcessLayer();
+            DLL.open();
+            SqlParameter[] sqlparam = new SqlParameter[1];
+            sqlparam[0] = new SqlParameter("@ID", SqlDbType.VarChar, 50);
+            sqlparam[0].Value = ID;
+            DataTable dt = new DataTable();
+            dt = DLL.SelectData("SP_SEARCH_BARCODE", sqlparam);
+            DLL.close();
+            return dt;
+        }
+
     }
 }

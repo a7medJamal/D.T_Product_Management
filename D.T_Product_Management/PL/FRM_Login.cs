@@ -73,6 +73,8 @@ namespace D.T_Product_Management.PL
                     //frm.ShowDialog();
 
                     this.Close();
+                  FRM_Main.getMainForm.lblUser.Text = Program.SalesMan;
+
                 }
                 else if (dt.Rows[0][2].ToString() == "USER")
                 {
@@ -90,7 +92,7 @@ namespace D.T_Product_Management.PL
                     //FRM_Main frm = new FRM_Main();
                     //frm.ShowDialog();
                     this.Close();
-
+                    FRM_Main.getMainForm.lblUser.Text = Program.SalesMan;
                 }
             }
             else

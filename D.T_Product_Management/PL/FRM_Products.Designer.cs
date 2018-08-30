@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11F);
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(292, 62);
+            this.label1.Location = new System.Drawing.Point(292, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 23);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // txt_Search
             // 
             this.txt_Search.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.txt_Search.Location = new System.Drawing.Point(475, 57);
+            this.txt_Search.Location = new System.Drawing.Point(475, 31);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(645, 32);
             this.txt_Search.TabIndex = 0;
@@ -70,7 +70,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DGV_Data);
-            this.groupBox1.Location = new System.Drawing.Point(25, 115);
+            this.groupBox1.Location = new System.Drawing.Point(25, 79);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(1410, 437);
@@ -101,10 +101,10 @@
             this.groupBox2.Controls.Add(this.btn_Edit);
             this.groupBox2.Controls.Add(this.btn_Delete);
             this.groupBox2.Controls.Add(this.btn_ADD);
-            this.groupBox2.Location = new System.Drawing.Point(28, 583);
+            this.groupBox2.Location = new System.Drawing.Point(91, 531);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(1380, 162);
+            this.groupBox2.Size = new System.Drawing.Size(1255, 162);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "العمليات";
@@ -112,27 +112,29 @@
             // btn_Exite
             // 
             this.btn_Exite.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Exite.Location = new System.Drawing.Point(475, 106);
+            this.btn_Exite.Location = new System.Drawing.Point(406, 106);
             this.btn_Exite.Name = "btn_Exite";
             this.btn_Exite.Size = new System.Drawing.Size(131, 42);
             this.btn_Exite.TabIndex = 36;
             this.btn_Exite.Text = "الخروج";
             this.btn_Exite.UseVisualStyleBackColor = true;
+            this.btn_Exite.Click += new System.EventHandler(this.btn_Exite_Click_1);
             // 
             // btn_Sava_Excel
             // 
             this.btn_Sava_Excel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Sava_Excel.Location = new System.Drawing.Point(89, 37);
+            this.btn_Sava_Excel.Location = new System.Drawing.Point(20, 37);
             this.btn_Sava_Excel.Name = "btn_Sava_Excel";
             this.btn_Sava_Excel.Size = new System.Drawing.Size(249, 42);
             this.btn_Sava_Excel.TabIndex = 35;
             this.btn_Sava_Excel.Text = "حفظ الاصناف فى ملف اكسل";
             this.btn_Sava_Excel.UseVisualStyleBackColor = true;
+            this.btn_Sava_Excel.Click += new System.EventHandler(this.btn_Sava_Excel_Click_1);
             // 
             // btn_Print
             // 
             this.btn_Print.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Print.Location = new System.Drawing.Point(655, 106);
+            this.btn_Print.Location = new System.Drawing.Point(586, 106);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(215, 42);
             this.btn_Print.TabIndex = 34;
@@ -142,7 +144,7 @@
             // btn_Print_Selected
             // 
             this.btn_Print_Selected.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Print_Selected.Location = new System.Drawing.Point(362, 37);
+            this.btn_Print_Selected.Location = new System.Drawing.Point(293, 37);
             this.btn_Print_Selected.Name = "btn_Print_Selected";
             this.btn_Print_Selected.Size = new System.Drawing.Size(210, 42);
             this.btn_Print_Selected.TabIndex = 33;
@@ -152,7 +154,7 @@
             // btn_Image
             // 
             this.btn_Image.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Image.Location = new System.Drawing.Point(595, 37);
+            this.btn_Image.Location = new System.Drawing.Point(526, 37);
             this.btn_Image.Name = "btn_Image";
             this.btn_Image.Size = new System.Drawing.Size(133, 42);
             this.btn_Image.TabIndex = 32;
@@ -162,7 +164,7 @@
             // btn_Edit
             // 
             this.btn_Edit.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Edit.Location = new System.Drawing.Point(758, 37);
+            this.btn_Edit.Location = new System.Drawing.Point(689, 37);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(190, 42);
             this.btn_Edit.TabIndex = 31;
@@ -172,28 +174,30 @@
             // btn_Delete
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_Delete.Location = new System.Drawing.Point(969, 37);
+            this.btn_Delete.Location = new System.Drawing.Point(900, 37);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(188, 42);
             this.btn_Delete.TabIndex = 30;
             this.btn_Delete.Text = "حذف المنتج المحدد";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click_1);
             // 
             // btn_ADD
             // 
             this.btn_ADD.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_ADD.Location = new System.Drawing.Point(1172, 37);
+            this.btn_ADD.Location = new System.Drawing.Point(1103, 37);
             this.btn_ADD.Name = "btn_ADD";
             this.btn_ADD.Size = new System.Drawing.Size(129, 42);
             this.btn_ADD.TabIndex = 29;
             this.btn_ADD.Text = "اضافه منتج جديد";
             this.btn_ADD.UseVisualStyleBackColor = true;
+            this.btn_ADD.Click += new System.EventHandler(this.btn_ADD_Click_1);
             // 
             // FRM_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1447, 748);
+            this.ClientSize = new System.Drawing.Size(1447, 716);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_Search);

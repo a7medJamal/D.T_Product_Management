@@ -46,7 +46,6 @@ namespace D.T_Product_Management.PL
             if (frm == null)
                 frm = this;
 
-
           this.DGV_Data.DataSource = cl.GET_ALL_PRODUCTS();
         }
 
@@ -62,17 +61,18 @@ namespace D.T_Product_Management.PL
             this.DGV_Data.DataSource = dt;
             this.DGV_Data.Refresh();
         }
-
-        private void btn_ADD_Click(object sender, EventArgs e)
+        private void btn_Exite_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btn_ADD_Click_1(object sender, EventArgs e)
         {
             FRM_ADD_PRODUCT frm = new FRM_ADD_PRODUCT();
             frm.ShowDialog();
         }
-
-        //this to delet rows from database
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void btn_Delete_Click_1(object sender, EventArgs e)
         {
-            if(MessageBox.Show("هل تريد الحذف","حذف المنتج",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation)==DialogResult.OK)
+            if (MessageBox.Show("هل تريد الحذف", "حذف المنتج", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
                 cl.DELETE_PRODUCT(DGV_Data.CurrentRow.Cells[0].Value.ToString());
                 MessageBox.Show("تم الحذف بنجاح", "حذف المنتج", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -84,7 +84,48 @@ namespace D.T_Product_Management.PL
             }
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Sava_Excel_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+
+                RPT.RPT_PRODUCT_ALL myreport = new RPT.RPT_PRODUCT_ALL();
+
+                //create export options
+                ExportOptions expoert = new ExportOptions();
+
+                //create object for destination
+                DiskFileDestinationOptions dfoptions = new DiskFileDestinationOptions();
+
+                ExcelFormatOptions exelformat = new ExcelFormatOptions();
+                //set the path of destionation
+                SaveFileDialog ofd = new SaveFileDialog();
+                ofd.Filter = "ملفات exel | *.xls";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    dfoptions.DiskFileName = ofd.FileName;
+                }
+
+                expoert = myreport.ExportOptions;
+
+                expoert.ExportDestinationType = ExportDestinationType.DiskFile;
+
+                expoert.ExportFormatType = ExportFormatType.Excel;
+
+                expoert.ExportFormatOptions = exelformat;
+                expoert.ExportDestinationOptions = dfoptions;
+                myreport.Export();
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("تم حفظ الملف بنجاح", "الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                return;
+            }
+        }
+
+        private void btn_Edit_Click_1(object sender, EventArgs e)
         {
             FRM_ADD_PRODUCT frm = new FRM_ADD_PRODUCT();
             frm.txt_ID.Text = DGV_Data.CurrentRow.Cells[0].Value.ToString();
@@ -102,71 +143,32 @@ namespace D.T_Product_Management.PL
             frm.ShowDialog();
         }
 
-        private void btn_Image_Click(object sender, EventArgs e)
-        {
-            FRM_PREVIEW frm = new FRM_PREVIEW();
-            frm.Text = "عرض صوره المنتج" + " "+  " " +DGV_Data.CurrentRow.Cells[0].Value.ToString();
-            // to get data image byte
-            byte[] image = (byte[])cl.Select_Image(this.DGV_Data.CurrentRow.Cells[0].Value.ToString()).Rows[0][0];
-            MemoryStream ms = new MemoryStream(image);
-            frm.PIC_PREVIEW.Image = Image.FromStream(ms);
-            frm.ShowDialog();
-
-        }
-
-        private void btn_Print_Selected_Click(object sender, EventArgs e)
+        private void btn_Print_Selected_Click_1(object sender, EventArgs e)
         {
             RPT.RPT_PRODUCT_SINGLE myreport = new RPT.RPT_PRODUCT_SINGLE();
             myreport.SetParameterValue("@ID", this.DGV_Data.CurrentRow.Cells[0].Value.ToString());
             RPT.FRM_PRT_PRODUCT frm = new RPT.FRM_PRT_PRODUCT();
-            frm.crystalReportViewer1.ReportSource=myreport;
+            frm.crystalReportViewer1.ReportSource = myreport;
             frm.ShowDialog();
         }
 
-        private void btn_Print_Click(object sender, EventArgs e)
+        private void btn_Print_Click_1(object sender, EventArgs e)
         {
             RPT.RPT_PRODUCT_ALL myreport = new RPT.RPT_PRODUCT_ALL();
             RPT.FRM_PRT_PRODUCT frm = new RPT.FRM_PRT_PRODUCT();
             frm.crystalReportViewer1.ReportSource = myreport;
             frm.ShowDialog();
-
         }
 
-        // this to save all product exel (you can save to pdf or any format)
-        private void btn_Sava_Excel_Click(object sender, EventArgs e)
+        private void btn_Image_Click_1(object sender, EventArgs e)
         {
-            RPT.RPT_PRODUCT_ALL myreport = new RPT.RPT_PRODUCT_ALL();
-
-            //create export options
-            ExportOptions expoert = new ExportOptions();
-
-            //create object for destination
-            DiskFileDestinationOptions dfoptions = new DiskFileDestinationOptions();
-
-            ExcelFormatOptions exelformat = new ExcelFormatOptions();
-            //set the path of destionation
-            SaveFileDialog ofd = new SaveFileDialog();
-            ofd.Filter = "ملفات exel | *.xls";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                dfoptions.DiskFileName = ofd.FileName;
-
-            }
-            expoert = myreport.ExportOptions;
-
-            expoert.ExportDestinationType = ExportDestinationType.DiskFile;
-
-            expoert.ExportFormatType = ExportFormatType.Excel;
-
-            expoert.ExportFormatOptions = exelformat;
-            expoert.ExportDestinationOptions = dfoptions;
-            myreport.Export();
-            MessageBox.Show("تم حفظ الملف بنجاح","الحفظ",MessageBoxButtons.OK,MessageBoxIcon.Information);
-        }
-
-        private void btn_Exite_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            FRM_PREVIEW frm = new FRM_PREVIEW();
+            frm.Text = "عرض صوره المنتج" + " " + " " + DGV_Data.CurrentRow.Cells[0].Value.ToString();
+            // to get data image byte
+            byte[] image = (byte[])cl.Select_Image(this.DGV_Data.CurrentRow.Cells[0].Value.ToString()).Rows[0][0];
+            MemoryStream ms = new MemoryStream(image);
+            frm.PIC_PREVIEW.Image = Image.FromStream(ms);
+            frm.ShowDialog();
         }
     }
 }

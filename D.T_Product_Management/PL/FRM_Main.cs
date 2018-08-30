@@ -47,7 +47,6 @@ namespace D.T_Product_Management.PL
             this.انشاءنسخهاحتياطيهToolStripMenuItem.Enabled = false;
             this.استعادهنسخهاحتياطيهToolStripMenuItem.Enabled = false;
 
-            lblUser.Text = Program.SalesMan;
             lblClock.Text = DateTime.Now.ToLongDateString();
         }
 
